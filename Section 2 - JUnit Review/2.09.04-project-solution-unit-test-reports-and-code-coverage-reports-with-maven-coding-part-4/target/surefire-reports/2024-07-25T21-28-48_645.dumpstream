@@ -1,0 +1,4 @@
+# Created at 2024-07-25T21:28:49.581
+Boot Manifest-JAR contains absolute paths in classpath 'E:\Computer Science\Java\Spring Boot\Spring Boot Testing\Section 2 - JUnit Review\2.09.04-project-solution-unit-test-reports-and-code-coverage-reports-with-maven-coding-part-4\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+
