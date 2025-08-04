@@ -5,10 +5,10 @@
 * [Tdd Method](#tdd-method)
 * [Parameterized Test](#parameterized-test)
     * [@CsvFileSource](#csvfilesource)
-    * [@ValueSource](#csvfilesource)
-    * [@ValueSource](#csvfilesource)
-    * [@EnumSource](#csvfilesource)
-    * [@MethodSource](#csvfilesource)
+    * [@ValueSource](#valuesource)
+    * [@CsvSource](#csvsource)
+    * [@EnumSource](#enumsource)
+    * [@MethodSource](#methodsource)
 
 ## Traditional Method
 

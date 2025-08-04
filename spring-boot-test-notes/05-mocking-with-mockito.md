@@ -10,6 +10,10 @@
     * [3. Set up expectations](#3-set-up-expectations)
     * [4. Call method under test and assert results](#4-call-method-under-test-and-assert-results)
     * [5. Verify method calls](#5-verify-method-calls)
+* [@MockBean](#mockbean)
+* [Throwing Exceptions with Mocks](#throwing-exceptions-with-mocks)
+    * [Throw Exception](#throw-exception)
+    * [Throw Exception: Consecutive calls](#throw-exception-consecutive-calls)
 
 ## Dependency
 
@@ -57,3 +61,39 @@
 ### 5. Verify method calls
 
 ![Screenshot 2024-12-02 182219](https://github.com/user-attachments/assets/4444a658-4d98-4087-9c67-ea558dc22122)
+
+
+## @MockBean
+
+```
+Instead of using Mockito: @Mock and @InjectMocks
+Use Spring Boot support: @MockBean and @Autowired
+```
+
+## Throwing Exceptions with Mocks
+
+### Use Case
+```
+Testing how the code handles exceptions
+```
+
+### Throw Exception
+![Screenshot 2024-12-15 184545](https://github.com/user-attachments/assets/13fe976f-24fe-478d-bdd6-24d1ebbbb20b)
+
+```java
+@DisplayName("Throw runtime error")
+@Test
+public void throwRuntimeError() {
+    CollegeStudent nullStudent = (CollegeStudent) context.getBean("collegeStudent");
+
+    doThrow(new RuntimeException()).when(applicationDao).checkNull(nullStudent);
+
+    assertThrows(RuntimeException.class, () -> {
+        applicationService.checkNull(nullStudent);
+    });
+
+    verify(applicationDao, times(1)).checkNull(nullStudent);
+}
+```
+### Throw Exception: Consecutive calls
+![Screenshot 2024-12-15 184555](https://github.com/user-attachments/assets/f6d83179-3b76-45d1-9abc-a4d2183e4c33)
